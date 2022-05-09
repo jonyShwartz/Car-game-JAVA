@@ -1,0 +1,67 @@
+package game;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class panel extends JPanel{
+	private CustomRectangel rec;
+	public static final int Window_Width = 1000;
+	public static final int Window_Height = 772;
+	
+	public panel() {
+		this.setBounds(0, 0, Window_Width, Window_Width);
+		this.setLayout(null);
+		this.rec = new CustomRectangel(0, 0, 100, 772, Color.BLACK);
+		
+		JButton bEasy = new JButton("easy game");
+		JButton bMedium = new JButton("medium game");
+		JButton bHard = new JButton("hard game");
+
+		
+		bEasy.setBounds(350,200,250,50);
+		bEasy.setBackground(Color.yellow);
+		bEasy.addActionListener((event) -> {
+        bEasy.setVisible(false);
+		bMedium.setVisible(false);
+		bHard.setVisible(false);
+			GameScence gameScene = new GameScence(0, 0, Window_Width, Window_Height);
+			this.add(gameScene);
+		});
+
+//		bMedium.setBounds(350,bEasy.getY() + 100,250,50);
+//		bMedium.setBackground(Color.yellow);
+//		bMedium.addActionListener((event) -> {
+//			bMedium.setVisible(false);
+//	        bEasy.setVisible(false);
+//			bHard.setVisible(false);
+//			GameScence gameScene = new GameScence(0, 0, Window_Width, Window_Height);
+//			this.add(gameScene);
+//		});
+		
+		bHard.setBounds(350,bMedium.getY() + 100,250,50);
+		bHard.setBackground(Color.yellow);
+		bHard.addActionListener((event) -> {
+			GameScence gameScene = new GameScence(0, 0, Window_Width, Window_Height);
+			this.add(gameScene);
+	        bEasy.setVisible(false);
+			bMedium.setVisible(false);
+		bHard.setVisible(false);
+		});
+		this.add(bEasy);
+		this.add(bMedium);
+		this.add(bHard);
+
+		
+		
+	}
+	
+	
+
+	
+	
+}

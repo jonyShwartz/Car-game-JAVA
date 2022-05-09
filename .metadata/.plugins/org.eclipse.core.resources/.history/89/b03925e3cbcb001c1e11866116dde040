@@ -1,0 +1,39 @@
+package game;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class RectangelObstacle {
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	private Color color;
+
+	
+	public RectangelObstacle(int x, int y, int width, int height, Color color) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.color = color;	
+		System.out.println("dfghj");
+	 Thread t = new Thread(() -> {
+     	while(true) {
+     	try {
+     		this.y+=2;
+				Thread.sleep(10) ;
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+     	}
+     });t.start();
+	}
+	
+	public void paint(Graphics graphics) {
+		graphics.setColor(Color.black);
+		graphics.fillRect(this.x, this.y, this.width, this.height);
+	}
+
+}

@@ -1,0 +1,32 @@
+package game;
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class panel extends JPanel{
+	private CustomRectangel rec;
+
+	public panel() {
+		this.setBackground(Color.BLACK);
+		this.setBounds(1000, 0, 1200, 772);
+		this.setLayout(null);
+		this.rec = new CustomRectangel(0, 0, 100, 772, Color.BLACK);
+		JButton b = new JButton();
+		b.setBounds(0,0,100,50);
+		b.setBackground(Color.yellow);
+		this.add(b);
+		
+		JButton button1 = new JButton("click to start");
+		button1.setBounds(0,0,200,50);
+		this.add(button1);
+		JButton button2 = new JButton("click2");
+		button2.setBounds(button1.getX(),button1.getY() + button1.getHeight(),button1.getWidth(),button1.getHeight());
+		this.add(button2);
+	}
+
+	
+	
+}

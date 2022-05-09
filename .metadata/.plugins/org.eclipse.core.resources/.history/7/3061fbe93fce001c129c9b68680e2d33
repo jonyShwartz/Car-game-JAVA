@@ -1,0 +1,74 @@
+package game;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+public class CarObstacle {
+	
+	private int x,y;
+	private ImageIcon car;
+	public boolean bool;
+	
+	public CarObstacle(ImageIcon car,int x,int y) {
+		this.car = car;
+		this.x = x;
+		this.y = y;
+		this.bool = true;
+		
+        Thread t = new Thread(() -> {
+        	while(true) {
+        	try {
+        		this.y+=2;
+				Thread.sleep(10) ;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} 
+        	}
+        });t.start();
+	}
+	public void boolChanges() {
+		try {
+			bool = false;
+			Thread.sleep(5000);
+			bool = false;
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	
+	
+    public boolean show() {
+    	return bool;
+    }
+
+	
+	
+	protected void paint(Graphics g) {
+		new Thread(() -> {
+    		if(bool == true) {
+        		this.car.paintIcon(null, g, x, y);
+    		}
+		}).start();
+         }
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+
+	public int getY() {
+		return y;
+	}
+
+
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+}

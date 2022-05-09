@@ -1,0 +1,26 @@
+package game;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+public class carMove {
+	
+	private CarObstacle[] enemyCars;
+	
+	public carMove(CarObstacle[] enemyCars) {
+		this.enemyCars = enemyCars;
+		
+        Thread t = new Thread(() -> {
+        	while(true) {
+        	
+        		System.out.println("asdfgh");
+        	}
+        });t.start();
+	}
+	
+	
+	protected void paint(Graphics g) {
+		this.enemyCars[0].paint(g);
+	}
+}

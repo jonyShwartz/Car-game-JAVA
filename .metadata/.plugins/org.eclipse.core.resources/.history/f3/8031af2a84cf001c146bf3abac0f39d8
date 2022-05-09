@@ -1,0 +1,17 @@
+package game;
+
+import java.awt.Color;
+
+import javax.swing.JPanel;
+
+public class EndPanel extends JPanel{
+
+	public static final int Window_Width = 1000;
+	public static final int Window_Height = 772;
+	
+	public EndPanel() {
+		this.setBounds(0, 0, Window_Width, Window_Width);
+		this.setLayout(null);
+		//this.rec = new CustomRectangel(0, 0, 100, 772, Color.BLACK);
+	}
+}

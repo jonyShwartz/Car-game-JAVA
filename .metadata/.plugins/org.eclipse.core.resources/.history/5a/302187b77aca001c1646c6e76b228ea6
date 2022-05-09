@@ -1,0 +1,19 @@
+package game;
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class panel extends JPanel{
+	
+	public panel() {
+		this.setBackground(Color.BLACK);
+		this.setBounds(0, 0, 1200, 772);
+		
+		JButton b = new JButton("dfghjkl");
+		this.add(b);
+	}
+
+}
