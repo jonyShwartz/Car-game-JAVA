@@ -17,17 +17,17 @@ public class RectangelObstacle {
 		this.width = width;
 		this.height = height;
 		this.color = color;	
-	 Thread t = new Thread(() -> {
-     	while(true) {
-     	try {
-     		this.y+=0.5;
-				Thread.sleep(1) ;
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-     	}
-     });t.start();
+//	 Thread t = new Thread(() -> {
+//     	while(true) {
+//     	try {
+//     		this.y+=0.5;
+//				Thread.sleep(1) ;
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} 
+//     	}
+//     });t.start();
 	}
 	
 	public void paint(Graphics graphics) {
@@ -35,6 +35,10 @@ public class RectangelObstacle {
 		graphics.drawRect((int)this.x, (int)this.y, this.width, this.height);
 	}
 
+	public void moveDown(double x) {
+		this.y = y + x;
+	}
+	
 	public int getX() {
 		return (int)x;
 	}

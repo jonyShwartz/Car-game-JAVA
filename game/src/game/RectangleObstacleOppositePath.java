@@ -34,6 +34,10 @@ public class RectangleObstacleOppositePath {
 	public int getHeight() {
 		return height;
 	}
+	
+	public void moveDown(double x) {
+		this.y = y + x;
+	}
 
 	public RectangleObstacleOppositePath(int x, int y, int width, int height, Color color) {
 		this.x = x;
@@ -41,17 +45,17 @@ public class RectangleObstacleOppositePath {
 		this.width = width;
 		this.height = height;
 		this.color = color;	
-	 Thread t = new Thread(() -> {
-     	while(true) {
-     	try {
-     		this.y+=0.7;
-				Thread.sleep(1) ;
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-     	}
-     });t.start();
+//	 Thread t = new Thread(() -> {
+//     	while(true) {
+//     	try {
+//     		this.y+=0.7;
+//				Thread.sleep(1) ;
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} 
+//     	}
+//     });t.start();
 	}
 	
 	public void paint(Graphics graphics) {

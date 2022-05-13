@@ -16,7 +16,7 @@ public class EndPanel extends JPanel{
 	public EndPanel() {
 //		this.setBackground(Color.black);
 		this.setBounds(0, 0, Window_Width, Window_Width);
-		this.image = new ImageIcon("photo_2022-05-09_18-17-31.jpg");
+		this.image = new ImageIcon("crashPhoto.jpg");
 		this.setLayout(null);
 		
 

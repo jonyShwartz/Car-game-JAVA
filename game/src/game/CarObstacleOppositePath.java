@@ -19,16 +19,16 @@ public class CarObstacleOppositePath {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-        Thread t = new Thread(() -> {
-        	while(true) {
-        	try {
-        		this.y+=0.7;
-				Thread.sleep(1) ;
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} 
-        	}
-        });t.start();
+//        Thread t = new Thread(() -> {
+//        	while(true) {
+//        	try {
+//        		this.y+=0.7;
+//				Thread.sleep(1) ;
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			} 
+//        	}
+//        });t.start();
 	}
 	
 	
@@ -52,6 +52,10 @@ public class CarObstacleOppositePath {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public void moveDown(double x) {
+		this.y = y + x;
 	}
 	
 	public boolean checkCollision (CustomRectangel other) {

@@ -26,9 +26,23 @@ public class GameScence extends JPanel {
 	private Car car1;
 	private CustomRectangel rectangle;
 	private ImageIcon whiteCar;
-	int[] arr1 = new int[2];
-	int[] arr2 = new int[2];
+	private ImageIcon yellowCar;
+	private ImageIcon orangeCar;
+	private ImageIcon porscheCar;
+	int[] rightWhiteCarPath = new int[2];
+	int[] leftWhiteCarPath = new int[2];
+	int[] rightYellowCarPath = new int [2];
+	int[] leftYellowCarPath = new int [2];
+	int[] rightOrangeCarPath = new int [2];
+	int[] leftOrangeCarPath = new int [2];
+	int[] rightPorscheCarPath = new int [2];
+	int[] leftPorscheCarPath = new int[2];
+
+
 	private ImageIcon whiteCarOppositivePass;
+	private ImageIcon yellowCarOppositivePass;
+	private ImageIcon orangeCarOppositivePass;
+	private ImageIcon porscheCarOppositivePass;
 	private CarObstacle[] carObstacleArr;
 	private CarObstacleOppositePath[] carObstacleOppositePathArr;
 	private RectangelObstacle[] rectangleObstacleArr;
@@ -46,44 +60,150 @@ public class GameScence extends JPanel {
 		this.rectangle = new CustomRectangel(this.x, this.y, 115, 250, Color.blue);
 		this.whiteCar = new ImageIcon("whiteCar.png");
 		this.whiteCarOppositivePass = new ImageIcon("whiteCarOppositePath.png");
+		this.yellowCar = new ImageIcon("yellowCar.png");
+		this.yellowCarOppositivePass = new ImageIcon("yellowCarOppositivePath.png");
+		this.orangeCar = new ImageIcon("orangeCar.png");
+		this.orangeCarOppositivePass = new ImageIcon("orangeCarOppositivePath.png");
+		this.porscheCar = new ImageIcon("porscheCar.png");
+		this.porscheCarOppositivePass = new ImageIcon("porscheCarOppositivePath.png");
 
-		arr1[0] = 530;
-		arr1[1] = 680;
-		arr2[0] = 210;
-		arr2[1] = 360;
+
+
+		
+		rightWhiteCarPath[0] = 530;
+		rightWhiteCarPath[1] = 680;
+		leftWhiteCarPath[0] = 210;
+		leftWhiteCarPath[1] = 360;
+		
+		rightYellowCarPath[0] = 470;
+		rightYellowCarPath[1] = 610;
+		leftYellowCarPath[0] = 150;
+		leftYellowCarPath[1] = 300;
+		
+		rightOrangeCarPath[0] = 440;
+		rightOrangeCarPath[1] = 580;
+		leftOrangeCarPath[0] = 140;
+		leftOrangeCarPath[1] = 290;
+		
+		rightPorscheCarPath[0] = 510;
+		rightPorscheCarPath[1] = 650;
+		leftPorscheCarPath[0] = 210;
+		leftPorscheCarPath[1] = 360;
 		
 		int ycar = 0;
-		this.carObstacleArr = new CarObstacle[100];
-		this.rectangleObstacleArr = new RectangelObstacle[100];
-		for (int i = 0; i < this.carObstacleArr.length; i++) {
+		this.carObstacleArr = new CarObstacle[8000];
+		this.rectangleObstacleArr = new RectangelObstacle[8000];
+		for (int i = 0; i < this.carObstacleArr.length; i+=4) {
 			// CarObstacle carObstacleArrIndex = null;
-			CarObstacle carObstacleArrIndex = new CarObstacle(whiteCar, getRandom(arr1), ycar - 700);
+			CarObstacle carObstacleArrIndex = new CarObstacle(whiteCar, getRandom(rightWhiteCarPath), ycar - 700);
 			this.carObstacleArr[i] = carObstacleArrIndex;
-			int carObstacleArrIndexX = carObstacleArrIndex.getX();
-			int carObstacleArrIndexY = carObstacleArrIndex.getY();
+			int whiteCarArrIndexX = carObstacleArrIndex.getX();
+			int whiteCarArrIndexY = carObstacleArrIndex.getY();
 
 			// RectangelObstacle rectangleObstacleArrIndex = null;
-			RectangelObstacle rectangleObstacleArrIndex = new RectangelObstacle(carObstacleArrIndexX,
-					carObstacleArrIndexY, 105, 230, Color.blue);
+			RectangelObstacle rectangleObstacleArrIndex = new RectangelObstacle(whiteCarArrIndexX,
+					whiteCarArrIndexY , 105, 207, Color.blue);
 			this.rectangleObstacleArr[i] = rectangleObstacleArrIndex;
 			ycar = ycar - 700;
+			
+	/*------------------------------------------------------------------------------------------------------------------*/
+			
+			 carObstacleArrIndex = new CarObstacle(yellowCar, getRandom(rightYellowCarPath), ycar - 700);
+			this.carObstacleArr[i + 1] = carObstacleArrIndex;
+			int yellowCarArrIndexX = carObstacleArrIndex.getX();
+			int yellowCarArrIndexY = carObstacleArrIndex.getY();
+
+			// RectangelObstacle rectangleObstacleArrIndex = null;
+			 rectangleObstacleArrIndex = new RectangelObstacle(yellowCarArrIndexX + 60,
+					yellowCarArrIndexY , 105, 225, Color.blue);
+			this.rectangleObstacleArr[i + 1] = rectangleObstacleArrIndex;
+			ycar = ycar - 700;
+			
+	/*------------------------------------------------------------------------------------------------------------------*/
+
+			 carObstacleArrIndex = new CarObstacle(orangeCar, getRandom(rightOrangeCarPath), ycar - 700);
+				this.carObstacleArr[i + 2] = carObstacleArrIndex;
+				int orangeCarArrIndexX = carObstacleArrIndex.getX();
+				int orangeCarArrIndexY = carObstacleArrIndex.getY();
+
+				// RectangelObstacle rectangleObstacleArrIndex = null;
+				 rectangleObstacleArrIndex = new RectangelObstacle(orangeCarArrIndexX + 90,
+						orangeCarArrIndexY + 85, 105, 205, Color.blue);
+				this.rectangleObstacleArr[i + 2] = rectangleObstacleArrIndex;
+				ycar = ycar - 700;
+				
+	/*------------------------------------------------------------------------------------------------------------------*/
+
+				carObstacleArrIndex = new CarObstacle(porscheCar, getRandom(rightPorscheCarPath), ycar - 700);
+				this.carObstacleArr[i + 3] = carObstacleArrIndex;
+				int porscheCarArrIndexX = carObstacleArrIndex.getX();
+				int porscheCarArrIndexY = carObstacleArrIndex.getY();
+
+				// RectangelObstacle rectangleObstacleArrIndex = null;
+				 rectangleObstacleArrIndex = new RectangelObstacle(porscheCarArrIndexX + 25 ,
+						porscheCarArrIndexY + 10, 105, 235, Color.blue);
+				this.rectangleObstacleArr[i + 3] = rectangleObstacleArrIndex;
+				ycar = ycar - 700;
+				
 		}
 
+		
+		
+		
+		
 		int ycaroppositive = 0;
-		this.carObstacleOppositePathArr = new CarObstacleOppositePath[100];
-		this.rectangleObstacleOppositePathArr = new RectangleObstacleOppositePath[100];
-		for (int i = 0; i < this.carObstacleOppositePathArr.length; i++) {
-			CarObstacleOppositePath carObstacleArrIndexoppositive = null;
-			carObstacleArrIndexoppositive = new CarObstacleOppositePath(whiteCarOppositivePass, getRandom(arr2),
+		this.carObstacleOppositePathArr = new CarObstacleOppositePath[8000];
+		this.rectangleObstacleOppositePathArr = new RectangleObstacleOppositePath[8000];
+		
+		for (int i = 0; i < this.carObstacleOppositePathArr.length; i+=4) {
+			 CarObstacleOppositePath carObstacleArrIndexoppositive = new CarObstacleOppositePath(whiteCarOppositivePass, getRandom(leftWhiteCarPath),
 					ycaroppositive - 700);
 			this.carObstacleOppositePathArr[i] = carObstacleArrIndexoppositive;
-			int carObstacleArrIndexX = carObstacleArrIndexoppositive.getX();
-			int carObstacleArrIndexY = carObstacleArrIndexoppositive.getY();
+			int whiteCarArrIndexX = carObstacleArrIndexoppositive.getX();
+			int whiteCarArrIndexY = carObstacleArrIndexoppositive.getY();
 
-			RectangleObstacleOppositePath rectangleObstacleArrIndexoppositive = null;
-			rectangleObstacleArrIndexoppositive = new RectangleObstacleOppositePath(carObstacleArrIndexX,
-					carObstacleArrIndexY, 105, 230, Color.blue);
+			 RectangleObstacleOppositePath rectangleObstacleArrIndexoppositive = new RectangleObstacleOppositePath(whiteCarArrIndexX,
+					 whiteCarArrIndexY, 105, 207, Color.blue);
 			this.rectangleObstacleOppositePathArr[i] = rectangleObstacleArrIndexoppositive;
+			ycaroppositive = ycaroppositive - 700;
+			
+	/*------------------------------------------------------------------------------------------------------------------*/
+			
+			 carObstacleArrIndexoppositive = new CarObstacleOppositePath(yellowCarOppositivePass, getRandom(leftYellowCarPath),
+					ycaroppositive - 700);
+			this.carObstacleOppositePathArr[i + 1] = carObstacleArrIndexoppositive;
+			int yellowCarArrIndexX = carObstacleArrIndexoppositive.getX();
+			int yellowCarArrIndexY = carObstacleArrIndexoppositive.getY();
+
+			  rectangleObstacleArrIndexoppositive = new RectangleObstacleOppositePath(yellowCarArrIndexX + 60,
+					yellowCarArrIndexY, 105, 225, Color.blue);
+			this.rectangleObstacleOppositePathArr[i + 1] = rectangleObstacleArrIndexoppositive;
+			ycaroppositive = ycaroppositive - 700;
+			
+	/*------------------------------------------------------------------------------------------------------------------*/
+			
+			carObstacleArrIndexoppositive = new CarObstacleOppositePath(orangeCarOppositivePass, getRandom(leftOrangeCarPath),
+					ycaroppositive - 700);
+			this.carObstacleOppositePathArr[i + 2] = carObstacleArrIndexoppositive;
+			int orangeCarArrIndexX = carObstacleArrIndexoppositive.getX();
+			int orangeCarArrIndexY = carObstacleArrIndexoppositive.getY();
+
+			  rectangleObstacleArrIndexoppositive = new RectangleObstacleOppositePath(orangeCarArrIndexX + 70,
+					orangeCarArrIndexY + 85, 105, 200, Color.blue);
+			this.rectangleObstacleOppositePathArr[i + 2] = rectangleObstacleArrIndexoppositive;
+			ycaroppositive = ycaroppositive - 700;
+		
+	/*------------------------------------------------------------------------------------------------------------------*/
+
+			carObstacleArrIndexoppositive = new CarObstacleOppositePath(porscheCarOppositivePass, getRandom(leftPorscheCarPath),
+					ycaroppositive - 700);
+			this.carObstacleOppositePathArr[i + 3] = carObstacleArrIndexoppositive;
+			int porscheCarArrIndexX = carObstacleArrIndexoppositive.getX();
+			int porscheCarArrIndexY = carObstacleArrIndexoppositive.getY();
+
+			  rectangleObstacleArrIndexoppositive = new RectangleObstacleOppositePath(porscheCarArrIndexX + 5,
+					porscheCarArrIndexY + 25, 105, 233, Color.blue);
+			this.rectangleObstacleOppositePathArr[i + 3] = rectangleObstacleArrIndexoppositive;
 			ycaroppositive = ycaroppositive - 700;
 		}
 		Font myDeafaultFont = new Font("Arial",Font.BOLD,30);
@@ -97,26 +217,38 @@ public class GameScence extends JPanel {
 		nameTextField.setText(String.valueOf(counter));
 
 		this.mainGameLoop();
+		this.moveCars();
 	}
 
-//	public void moveTheCars() {
-//        Thread t = new Thread(() -> {
-//            while (true) {
-//                for (int i = 0; i < carObstacleArr.length; i++) {
-//                    try {
-//                        carObstacleArr[i].setY(y+2);
-//                        rectangleObstacleArr[i].setY(y+2);
-//                        carObstacleOppositePathArr[i].setY(y+2);
-//                        rectangleObstacleOppositePathArr[i].setY(y+2);
-//                        Thread.sleep(10);
-//
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        });t.start();
-//	}
+
+	public void moveCars() {
+		 Thread t = new Thread(() -> {
+			 double oppositiveSpeed = 0.7;
+				double speed = 0.4;   
+			 int counter = 0;
+		        int checkCounter = 0;
+	        	while(true) {
+	        	try {
+	        		for (int i = 0; i < carObstacleOppositePathArr.length; i++) {
+	        			counter ++;
+	        			if(counter > checkCounter + 3)
+	        			{
+	        				oppositiveSpeed = oppositiveSpeed + 0.00000002;
+	        				speed = speed + 0.00000002; 
+		        			checkCounter = counter;
+	        			}
+	        		carObstacleOppositePathArr[i].moveDown(oppositiveSpeed);
+	        		rectangleObstacleOppositePathArr[i].moveDown(oppositiveSpeed);  		
+	        		carObstacleArr[i].moveDown(speed);
+	        		rectangleObstacleArr[i].moveDown(speed);
+	        		}
+					Thread.sleep(1) ;
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} 
+	        	}
+	        });t.start();
+	}
 	
 	public static int getRandom(int[] arr) {
 		int rnd = new Random().nextInt(arr.length);
@@ -176,16 +308,16 @@ public class GameScence extends JPanel {
 				try {
 					for (int i = 0; i < rectangleObstacleOppositePathArr.length; i++) {
 						if (rectangle.checkColision1(rectangleObstacleOppositePathArr[i])) {
-							EndPanel panel = new EndPanel();
-							this.add(panel);
-							break first ;
+//							EndPanel panel = new EndPanel();
+//							this.add(panel);
+//							break first ;
 						}
 					}
 					for (int i = 0; i < rectangleObstacleArr.length; i++) {
 						if(rectangle.checkColision2(rectangleObstacleArr[i])) {
-							EndPanel panel = new EndPanel();
-							this.add(panel);
-							break first ;
+//							EndPanel panel = new EndPanel();
+//							this.add(panel);
+//							break first ;
 						}
 					}
 					//this.moveTheCars();
@@ -197,7 +329,6 @@ public class GameScence extends JPanel {
 					Thread.sleep(1);
 					this.counter++;
 					nameTextField.setText(String.valueOf(counter));
-					System.out.println(counter);
 					repaint();
 					this.limits();
 					for (int i = 0; i < carObstacleArr.length; i++) {

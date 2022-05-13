@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.util.TimerTask"/>
     <fullyQualifiedTypeName name="javax.smartcardio.ResponseAPDU"/>
     <fullyQualifiedTypeName name="game.CustomRectangel"/>
-    <fullyQualifiedTypeName name="java.awt.Color"/>
     <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="game.carMove"/>
@@ -14,7 +13,6 @@
     <fullyQualifiedTypeName name="game.RectangelObstacle"/>
     <fullyQualifiedTypeName name="game.GameScence"/>
     <fullyQualifiedTypeName name="game.panel"/>
-    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
     <fullyQualifiedTypeName name="java.awt.Rectangle"/>
     <fullyQualifiedTypeName name="game.RectangleObstacleOppositePath"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -23,4 +21,9 @@
     <fullyQualifiedTypeName name="game.CarObstacle"/>
     <fullyQualifiedTypeName name="game.RectangelObstacleEasy"/>
     <fullyQualifiedTypeName name="game.RectangleObstacleOppositePathEasy"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="game.EndPanel"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 </qualifiedTypeNameHistroy>

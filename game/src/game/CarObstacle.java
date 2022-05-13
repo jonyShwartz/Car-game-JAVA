@@ -16,16 +16,16 @@ public class CarObstacle {
 		this.y = y;
 	//	this.bool = true;
 		
-        Thread t = new Thread(() -> {
-        	while(true) {
-        	try {
-        		this.y+=0.5;
-				Thread.sleep(1) ;
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} 
-        	}
-        });t.start();
+//        Thread t = new Thread(() -> {
+//        	while(true) {
+//        	try {
+//        		this.y+=0.5;
+//				Thread.sleep(1) ;
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			} 
+//        	}
+//        });t.start();
 	}
 //	public void boolChanges() {
 //		try {
@@ -56,6 +56,10 @@ public class CarObstacle {
          }
 	
 
+	public void moveDown(double x) {
+		this.y = y + x;
+	}
+	
 	public int getX() {
 		return (int)x;
 	}

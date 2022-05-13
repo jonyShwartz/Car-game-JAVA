@@ -15,7 +15,7 @@ public class panel extends JPanel{
 
 	public panel() {
 		this.setBounds(0, 0, Window_Width, Window_Width);
-		this.image = new ImageIcon("photo_2022-05-09_18-54-01.jpg");
+		this.image = new ImageIcon("startPhoto.jpg");
 		this.setLayout(null);
 		
 
