@@ -308,16 +308,16 @@ public class GameScence extends JPanel {
 				try {
 					for (int i = 0; i < rectangleObstacleOppositePathArr.length; i++) {
 						if (rectangle.checkColision1(rectangleObstacleOppositePathArr[i])) {
-//							EndPanel panel = new EndPanel();
-//							this.add(panel);
-//							break first ;
+							EndPanel panel = new EndPanel();
+							this.add(panel);
+							break first ;
 						}
 					}
 					for (int i = 0; i < rectangleObstacleArr.length; i++) {
 						if(rectangle.checkColision2(rectangleObstacleArr[i])) {
-//							EndPanel panel = new EndPanel();
-//							this.add(panel);
-//							break first ;
+							EndPanel panel = new EndPanel();
+							this.add(panel);
+							break first ;
 						}
 					}
 					//this.moveTheCars();
